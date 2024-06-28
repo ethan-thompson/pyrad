@@ -59,6 +59,16 @@ The datatypes currently supported are:
 +---------------+----------------------------------------------+
 | integer64     | 64 bits unsigned number                      |
 +---------------+----------------------------------------------+
+| vsa           |                      |
++---------------+----------------------------------------------+
+| ipv4prefix    |                      |
++---------------+----------------------------------------------+
+| extended      |                      |
++---------------+----------------------------------------------+
+| long-extended      |                      |
++---------------+----------------------------------------------+
+| evs          |                      |
++---------------+----------------------------------------------+
 
 These datatypes are parsed but not supported:
 
@@ -82,7 +92,9 @@ __docformat__ = 'epytext en'
 
 DATATYPES = frozenset(['string', 'ipaddr', 'integer', 'date', 'octets',
                        'abinary', 'ipv6addr', 'ipv6prefix', 'short', 'byte',
-                       'signed', 'ifid', 'ether', 'tlv', 'integer64'])
+                       'signed', 'ifid', 'ether', 'tlv', 'integer64',
+                       'vsa', 'ipv4prefix', 'extended', 'long-extended',
+                       'evs'])
 
 
 class ParseError(Exception):

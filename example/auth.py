@@ -6,7 +6,7 @@ import socket
 import sys
 import pyrad.packet
 
-srv = Client(server="127.0.0.1", secret=b"testing123", dict=Dictionary("dictionary"))
+srv = Client(server="127.0.0.1", secret=b"testing123", dict=Dictionary("dictionary/dictionary"))
 
 req = srv.CreateAuthPacket(code=pyrad.packet.AccessRequest, User_Name="bob")
 
