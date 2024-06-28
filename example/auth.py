@@ -6,9 +6,9 @@ import socket
 import sys
 import pyrad.packet
 
-srv = Client(server="127.0.0.1", secret=b"Kah3choteereethiejeimaeziecumi", dict=Dictionary("dictionary"))
+srv = Client(server="127.0.0.1", secret=b"testing123", dict=Dictionary("dictionary"))
 
-req = srv.CreateAuthPacket(code=pyrad.packet.AccessRequest, User_Name="wichert")
+req = srv.CreateAuthPacket(code=pyrad.packet.AccessRequest, User_Name="bob")
 
 req["NAS-IP-Address"] = "192.168.1.10"
 req["NAS-Port"] = 0
@@ -17,6 +17,7 @@ req["NAS-Identifier"] = "trillian"
 req["Called-Station-Id"] = "00-04-5F-00-0F-D1"
 req["Calling-Station-Id"] = "00-01-24-80-B3-9C"
 req["Framed-IP-Address"] = "10.0.0.100"
+req["User-Password"] = req.PwCrypt("hello")
 
 try:
     print("Sending authentication request")
